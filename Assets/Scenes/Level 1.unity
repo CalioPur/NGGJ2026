@@ -520,11 +520,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1, y: 0.5}
+  m_Offset: {x: 1.5, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -534,7 +534,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5, y: 1}
+  m_Size: {x: 3.5, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &300650856
 MonoBehaviour:
@@ -551,6 +551,9 @@ MonoBehaviour:
   currentState: 0
   detectionJaugePercent: 0
   jaugeProgressionSpeedMult: 1
+  jaugeBackground: {fileID: 1925838682}
+  jaugeFill: {fileID: 906141565}
+  jaugeSpotted: {fileID: 1966313732}
 --- !u!1 &309843993
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +902,8 @@ MonoBehaviour:
   distanceToFloor: 1
   spriteRenderer: {fileID: 388862074}
   xClamp: {x: -7.9, y: 30}
+  isHidden: 0
+  isDisguised: 0
 --- !u!50 &388862072
 Rigidbody2D:
   serializedVersion: 5

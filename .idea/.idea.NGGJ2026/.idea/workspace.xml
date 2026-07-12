@@ -12,11 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7861511-2a60-4a10-9abe-341c12109b62" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NGGJ2026/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NGGJ2026/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PickableInteractable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PickableInteractable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerControls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/DetectionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/DetectionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +129,7 @@
       <workItem from="1783891153439" duration="66000" />
       <workItem from="1783892550371" duration="177000" />
       <workItem from="1783892984030" duration="124000" />
-      <workItem from="1783893229719" duration="1032000" />
+      <workItem from="1783893229719" duration="3382000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
@@ -12,7 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 moveInput;
     private Vector3 velocity;
-    private bool isHidden =  false;
+    [HideInInspector] public bool isHidden = false;
+    [HideInInspector] public bool isDisguised = false;
     
     private List<Interactable> interactables  = new List<Interactable>();
     private List<string> ItemHeld = new List<string>();
