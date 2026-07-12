@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float distanceToFloor = 1f;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Vector2 xClamp;
 
     private Rigidbody2D rb;
     private Vector3 moveInput;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("MoveInput : " +moveInput);
         
         velocity.x = moveInput.x * speed;
+        
     }
 
     public void Interact(InputAction.CallbackContext context)
@@ -52,7 +54,19 @@ public class PlayerController : MonoBehaviour
             rb.transform.position = hit.point + Vector2.up * distanceToFloor;
         }
         
+        if (transform.position.x < xClamp.x)
+        {
+            transform.position = new Vector3(xClamp.x, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.x > xClamp.y)
+        {
+            transform.position = new Vector3(xClamp.y, transform.position.y, transform.position.z);
+        }
+        
         CheckCloserInteractable();
+        
+        
     }
 
     private void CheckCloserInteractable()
