@@ -1,17 +1,18 @@
-using System;
 using UnityEngine;
 
-public class HidingSpot : MonoBehaviour, Interactable
+public class PickableInteractable : MonoBehaviour, Interactable
 {
-    public GameObject hidingSpotLocation;
+    public string itemID;
     public InteractionCue cue;
     private PlayerController player;
+    public GameObject objectToMakeAppear;
+    
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -27,12 +28,15 @@ public class HidingSpot : MonoBehaviour, Interactable
             player.RemoveInteractable(this);
         }
     }
-
-
+    
     public void Interact()
     {
-        print("Hiding Spot");
-        player.Hide(hidingSpotLocation.transform.position);
+        player.AddItem(this);
+        if (objectToMakeAppear != null)
+        {
+            objectToMakeAppear.SetActive(true);
+        }
+        gameObject.SetActive(false);
     }
 
     public float DistanceFromPlayer()
@@ -51,11 +55,4 @@ public class HidingSpot : MonoBehaviour, Interactable
             cue.HideInteractionCue();
         }
     }
-}
-
-public interface Interactable
-{
-    public void Interact();
-    public float DistanceFromPlayer();
-    public void SetActiveInteractable(bool isActive);
 }

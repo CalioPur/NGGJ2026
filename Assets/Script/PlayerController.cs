@@ -14,14 +14,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private bool isHidden =  false;
     
-    private List<Interactable> interactables;
+    private List<Interactable> interactables  = new List<Interactable>();
+    private List<string> ItemHeld = new List<string>();
     private Interactable closestInteractable;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        interactables = new List<Interactable>();
-        
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -123,5 +122,11 @@ public class PlayerController : MonoBehaviour
             velocity = Vector2.zero;
             transform.position = pos;
         }
+    }
+
+    public void AddItem(PickableInteractable pickableInteractable)
+    {
+        ItemHeld.Add(pickableInteractable.itemID);
+        RemoveInteractable(pickableInteractable);
     }
 }
