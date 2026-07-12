@@ -5,7 +5,7 @@ public class CameraFollowPlayer : MonoBehaviour
 {
     public Transform target;
     public Vector3 cameraOffset;
-    public float speed;
+    public float DampingIntesity;
     Vector3 velocity =  Vector3.zero;
     public Vector2 xMinMax;
     public Vector2 yMinMax;
@@ -18,7 +18,7 @@ public class CameraFollowPlayer : MonoBehaviour
         Vector3 targetPosition = target.position +  cameraOffset;
         Vector3 clampedPosition = new Vector3(Mathf.Clamp(targetPosition.x, xMinMax.x, xMinMax.y),Mathf.Clamp(targetPosition.y, yMinMax.x, yMinMax.y),targetPosition.z);
         
-        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, clampedPosition, ref velocity, speed * Time.deltaTime);
+        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, clampedPosition, ref velocity, DampingIntesity * Time.deltaTime);
         transform.position = smoothedPosition;
     }
 }
