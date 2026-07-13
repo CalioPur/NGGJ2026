@@ -94,7 +94,8 @@ public class DetectionSystem : MonoBehaviour
         }
         else
         {
-            //distractedIcone
+           
+           
         }
     }
 }
