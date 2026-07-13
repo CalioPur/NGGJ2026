@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float distanceToFloor = 1f;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Vector2 xClamp;
-
+    [SerializeField] private float decelerationRatio = 0.97f;
     private Rigidbody2D rb;
     private Vector3 moveInput;
+    private bool isPressing = false;
     private Vector3 velocity;
     [HideInInspector] public bool isHidden = false;
     [HideInInspector] public bool isDisguised = false;
@@ -31,7 +32,8 @@ public class PlayerController : MonoBehaviour
         
         moveInput = context.ReadValue<Vector2>();
         //Debug.Log("MoveInput : " +moveInput);
-        
+        isPressing = (moveInput.magnitude > 0.2f);
+        if(!isPressing) return;
         velocity.x = moveInput.x * speed;
         
     }
@@ -63,6 +65,14 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xClamp.y)
         {
             transform.position = new Vector3(xClamp.y, transform.position.y, transform.position.z);
+        }
+        
+        if(!isPressing)velocity = Vector2.Lerp(velocity, Vector2.zero, decelerationRatio * Time.deltaTime);
+        
+
+        if (Mathf.Approximately(velocity.x, 0))
+        {
+            velocity.x = 0;
         }
         
         CheckCloserInteractable();
