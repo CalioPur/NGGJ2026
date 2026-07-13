@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private List<Interactable> interactables  = new List<Interactable>();
     private List<string> ItemHeld = new List<string>();
     private Interactable closestInteractable;
+    
+    private Takedownable closestTakedown;
 
     void Start()
     {
