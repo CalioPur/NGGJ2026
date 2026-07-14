@@ -50,6 +50,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void TakeDown(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            closestTakedown?.TakeDownAction();
+            closestTakedown = null;
+        }
+    }
+
     public void Update()
     {
         rb.transform.Translate(velocity * Time.deltaTime);
@@ -120,6 +129,13 @@ public class PlayerController : MonoBehaviour
             interactable.SetActiveInteractable(false);
         }
     }
+
+    public void SetTakedownTarget(Takedownable takedown)
+    {
+        closestTakedown?.ActualizeTakedownability(false);
+        closestTakedown = takedown;
+        closestTakedown?.ActualizeTakedownability();
+    }
     
     //SpecifiqueInteraction
     public void Hide(Vector2 pos)
@@ -136,11 +152,22 @@ public class PlayerController : MonoBehaviour
             velocity = Vector2.zero;
             transform.position = pos;
         }
+        closestTakedown?.ActualizeTakedownability();
     }
 
     public void AddItem(PickableInteractable pickableInteractable)
     {
         ItemHeld.Add(pickableInteractable.itemID);
         RemoveInteractable(pickableInteractable);
+    }
+
+    public bool PlayerHasItem(string itemID)
+    {
+        return ItemHeld.Contains(itemID);
+    }
+
+    public void RemoveItem(string itemID)
+    {
+        ItemHeld.Remove(itemID);
     }
 }

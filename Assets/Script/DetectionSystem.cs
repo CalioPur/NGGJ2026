@@ -98,6 +98,16 @@ public class DetectionSystem : MonoBehaviour
            
         }
     }
+
+    public void SetSpotted(bool b)
+    {
+        if (b)
+        {
+            currentState = NPCState.Alert;
+            detectionJaugePercent = 1;
+            DisplayJauge();
+        }
+    }
 }
 
 public enum NPCState
