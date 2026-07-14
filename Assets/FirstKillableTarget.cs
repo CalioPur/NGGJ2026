@@ -48,6 +48,7 @@ public class FirstKillableTarget : MonoBehaviour, Interactable, Takedownable
     {
         player.RemoveItem("Bottle");
         StartCoroutine(MoveRight());
+        player.RemoveInteractable(this);
     }
 
     public float DistanceFromPlayer()
