@@ -11,12 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7861511-2a60-4a10-9abe-341c12109b62" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NGGJ2026/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NGGJ2026/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/DetectionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/DetectionSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TakeDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TakeDown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirstKillableTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirstKillableTarget.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +133,7 @@
       <workItem from="1783947494991" duration="818000" />
       <workItem from="1783948491221" duration="3116000" />
       <workItem from="1783955609611" duration="6377000" />
-      <workItem from="1783980206896" duration="5870000" />
+      <workItem from="1783980206896" duration="6718000" />
     </task>
     <servers />
   </component>
