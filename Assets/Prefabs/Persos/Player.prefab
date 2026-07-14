@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9112844667484687361}
   - component: {fileID: 3966171878022584242}
   - component: {fileID: 8575455045582730440}
+  - component: {fileID: 2725704624148548441}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  distanceToFloor: 1
+  distanceToFloor: 1.5
   spriteRenderer: {fileID: 7501409259917676537}
   xClamp: {x: -7.9, y: 30}
   decelerationRatio: 7.5
@@ -264,3 +265,25 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &2725704624148548441
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552178495190771551}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dca06f7f2b77af4b93222b900b4f439, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
