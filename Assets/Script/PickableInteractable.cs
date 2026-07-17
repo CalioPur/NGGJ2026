@@ -7,6 +7,8 @@ public class PickableInteractable : MonoBehaviour, Interactable
     private PlayerController player;
     public GameObject objectToMakeAppear;
     
+    [SerializeField] DetectionSystem[] detectionSystemsToTrigger;
+    
 
     private void Start()
     {
@@ -37,6 +39,13 @@ public class PickableInteractable : MonoBehaviour, Interactable
             objectToMakeAppear.SetActive(true);
         }
         gameObject.SetActive(false);
+        foreach (DetectionSystem detectionSystem in detectionSystemsToTrigger)
+        {
+            if (detectionSystem != null && detectionSystem.currentState != NPCState.Distracted)
+            {
+                detectionSystem.SetSpotted(true);
+            }
+        }
     }
 
     public float DistanceFromPlayer()

@@ -1,13 +1,13 @@
-using System;
 using UnityEngine;
 
-public class HidingSpot : MonoBehaviour, Interactable
+public class BottleFall : MonoBehaviour, Interactable
 {
-    public GameObject hidingSpotLocation;
     public InteractionCue cue;
     private PlayerController player;
+    [SerializeField] private Transform brokenPos;
+    [SerializeField] private DetectionSystem[] detectionSystemsToDistract;
     
-    [SerializeField] DetectionSystem[] detectionSystemsToDistract;
+    private bool isBroken;
 
     private void Start()
     {
@@ -30,24 +30,22 @@ public class HidingSpot : MonoBehaviour, Interactable
         }
     }
 
-
     public void Interact()
     {
-        print("Hiding Spot");
-        if (player.PlayerHasItem("Briquet"))
+        if (!isBroken)
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            isBroken = true;
+            transform.position = brokenPos.position;
+            transform.rotation = brokenPos.rotation;
+            cue.HideInteractionCue();
             foreach (DetectionSystem detectionSystem in detectionSystemsToDistract)
             {
-                detectionSystem.currentState = NPCState.Distracted;
-                detectionSystem.DisplayJauge();
+                if (detectionSystem != null)
+                {
+                    detectionSystem.currentState = NPCState.Distracted;
+                }
             }
         }
-        else
-        {
-            player.Hide(hidingSpotLocation.transform.position);
-        }
-        
     }
 
     public float DistanceFromPlayer()
@@ -57,7 +55,7 @@ public class HidingSpot : MonoBehaviour, Interactable
 
     public void SetActiveInteractable(bool isActive)
     {
-        if (isActive)
+        if (isActive && !isBroken)
         {
             cue.ShowInteractionCue();
         }
@@ -66,11 +64,4 @@ public class HidingSpot : MonoBehaviour, Interactable
             cue.HideInteractionCue();
         }
     }
-}
-
-public interface Interactable
-{
-    public void Interact();
-    public float DistanceFromPlayer();
-    public void SetActiveInteractable(bool isActive);
 }
